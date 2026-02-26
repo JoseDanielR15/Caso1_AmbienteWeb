@@ -1,11 +1,12 @@
 <?php
+
 function OpenDatabase()
 {
-    return mysqli_connect("127.0.0.1","root","","caso1");
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    return mysqli_connect("127.0.0.1:3307","root","","caso1");
 }
 
-function CloseDatabase($conexion)
+function CloseDatabase($context)
 {
-    mysqli_close($conexion);
+    mysqli_close($context);
 }
-?>
